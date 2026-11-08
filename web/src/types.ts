@@ -28,11 +28,12 @@ export type Pitch = {
 
 // leaderboard entry
 export type LeaderboardEntry = {
-  pitch: Pitch; // TODO: replace with just pitchId and retrieve it
+  pitch: Pitch;
+  pitchId: string;
 
   totalScore: number;
   verdict: Verdict;
-  userId: string; // also github username
+  githubUsername: string;
   avatarUrl: string;
   creationTime: string; // JSON has no date type
 };
