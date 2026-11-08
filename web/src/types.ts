@@ -4,7 +4,7 @@
 
 // judge result
 export type JudgeResult = {
-  name: string;
+  judgeName: string; // judge name
   feedback: string;
   score: number;
 };
@@ -17,21 +17,22 @@ export type FullResults = {
   judgeResults: JudgeResult[];
   totalScore: number;
   verdict: Verdict;
-  userId?: number;
+  pitchId?: string;
 };
 
-// pitch
+// pitch - for POST
 export type Pitch = {
-  pitchId: number;
-  name: string;
-  pitch: string;
+  companyName: string; // company name - max 50 chars
+  text: string; // idea text - max 280 chars
 };
 
 // leaderboard entry
 export type LeaderboardEntry = {
-  pitchId: number;
+  pitch: Pitch; // TODO: replace with just pitchId and retrieve it
+
   totalScore: number;
   verdict: Verdict;
-  userId: number;
-  creationTime: Text; // JSON has no date type
+  userId: string; // also github username
+  avatarUrl: string;
+  creationTime: string; // JSON has no date type
 };
