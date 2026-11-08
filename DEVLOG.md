@@ -24,3 +24,20 @@ Functionalities:
 ## Sitemap
 
 ![sitemap](docs/media/sitemap.PNG)
+
+## Components
+
+Based on our product spec and sitemap, we mapped out the following component pages for our frontend:
+
+- `App`
+- `HomePage`
+- `LeaderboardPage`
+- `SignUpPage`
+- `SignInPage`
+- `ResultPage`
+- `PitchPage`
+
+and the individual components
+
+- `JudgeCard` - one VC's avatar, name, roast and score
+- `Navbar` at the top
