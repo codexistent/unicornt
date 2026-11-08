@@ -41,3 +41,17 @@ and the individual components
 
 - `JudgeCard` - one VC's avatar, name, roast and score
 - `Navbar` at the top
+
+# 11/8/2026 - Part 2
+
+To simplify the architecture of our app, at least for its first version, we made the following changes.
+
+## Product Spec Changes
+
+Only place that changed is that the shareable results link is now on backlog.
+
+## Sitemap Changes
+
+- Drop `SignUp` and `SignIn` pages and replace with a single `sign in with github` button.
+- Merge `Pitch` and `Result` pages into `HomePage`.
+- Since shareable results page is on backlog, the results appear on the homepage and there is no need for changing url.
