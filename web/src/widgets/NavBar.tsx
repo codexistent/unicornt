@@ -22,13 +22,13 @@ export function NavBar({
 }: NavBarProps) {
   return (
     <>
-      <header className="sticky top-0 z-10 border-b border-stone-200 bg-white/80 backdrop-blur dark:border-stone-800 dark:bg-stone-950/80">
+      <header className="sticky top-0 z-10 border-b border-violet-200 bg-white dark:border-purple-900/60 dark:bg-purple-950">
         <nav className="mx-auto flex h-14 max-w-5xl items-center gap-6 px-4">
           {/*Left - Logo + main navbar items*/}
           <button
             type="button"
             onClick={() => onNavigate("home")}
-            className="shrink-0 text-base font-semibold tracking-tight text-stone-900 dark:text-stone-100"
+            className="shrink-0 text-base font-bold tracking-tight text-purple-950 dark:text-purple-50"
           >
             Unicornt
           </button>
@@ -44,11 +44,11 @@ export function NavBar({
                     onClick={() => onNavigate(p.id)}
                     aria-current={active ? "page" : undefined}
                     className={
-                      "whitespace-nowrap rounded-md px-3 py-1.5 text-sm transition-colors" +
-                      "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-900" +
+                      "whitespace-nowrap rounded-md px-3 py-1.5 text-sm transition-all " +
+                      "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-500 " +
                       (active
-                        ? "bg-stone-100 font-medium text-stone-900 dark:bg-stone-800 dark:text-stone-100"
-                        : "text-stone-500 hover:text-stone-900 dark:text-stone-400 dark:hover:text-stone-100")
+                        ? "bg-purple-600 font-semibold text-white shadow-sm shadow-purple-900/40 dark:bg-purple-600 dark:text-white"
+                        : "text-purple-900/70 hover:bg-purple-100/60 hover:text-purple-950 dark:text-purple-200/70 dark:hover:bg-purple-900/40 dark:hover:text-purple-100")
                     }
                   >
                     {p.label}

@@ -1,7 +1,12 @@
 /**
  * @fileoverview Temporary fake data for ui testing
  */
-import type { FullResults, LeaderboardEntry, User } from "../types";
+import type {
+  FullResults,
+  JudgeResult,
+  LeaderboardEntry,
+  User,
+} from "../types";
 
 export const sampleResults1: FullResults = {
   judgeResults: [
@@ -73,6 +78,13 @@ export const sampleResults3: FullResults = {
   totalScore: 10,
   verdict: "unicornt",
   pitchId: "a1b2c3",
+};
+
+export const judgeResult1: JudgeResult = {
+  judgeName: "Jacobi",
+  feedback:
+    "Very sketchy pitch. Your company's future is looking dimmer than my son's.",
+  score: 3,
 };
 
 export const leaderboardEntry1: LeaderboardEntry = {
