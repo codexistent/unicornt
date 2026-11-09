@@ -4,13 +4,13 @@
 
 // judge result
 export type JudgeResult = {
-  judgeName: string; // judge name
+  judgeName: string;
   feedback: string;
   score: number;
 };
 
 // verdict - literal union type
-export type Verdict = "unicorn" | "unicorndt";
+export type Verdict = "unicorn" | "unicornt"; // unicorn if score >= 15
 
 // roast result
 export type FullResults = {
@@ -35,5 +35,5 @@ export type LeaderboardEntry = {
   verdict: Verdict;
   githubUsername: string;
   avatarUrl: string;
-  creationTime: string; // JSON has no date type
+  creationTime: string; // JSON has no date type; use ISO 8601
 };

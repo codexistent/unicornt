@@ -1,4 +1,4 @@
-# 11/8/2026
+# 11/8/2026 - Upd 1
 
 My first steps in building Unicorndt were twofold: 1. write a product spec, listing what functionalities and stakeholders/types of users would be interacting with the app, and 2. lay out a sitemap/information architecture.
 
@@ -42,7 +42,7 @@ and the individual components
 - `JudgeCard` - one VC's avatar, name, roast and score
 - `Navbar` at the top
 
-# 11/8/2026 - Part 2
+# 11/8/2026 - Upd 2
 
 To simplify the architecture of our app, at least for its first version, we made the following changes.
 
@@ -55,3 +55,7 @@ Only place that changed is that the shareable results link is now on backlog.
 - Drop `SignUp` and `SignIn` pages and replace with a single `sign in with github` button.
 - Merge `Pitch` and `Result` pages into `HomePage`.
 - Since shareable results page is on backlog, the results appear on the homepage and there is no need for changing url.
+
+# 11/8/2026 - Upd 3
+
+After adding `types.ts`, we moved to a new branch `ui` which will build out the frontend. In order to properly see how the frontend would display, we made a `mockData.ts` file which the frontend will temporarily reference.
