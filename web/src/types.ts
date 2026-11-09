@@ -3,6 +3,11 @@
  */
 
 export type PageState = "home" | "pitch" | "result" | "lboard";
+export type PitchFormState =
+  | { status: "idle" }
+  | { status: "loading" }
+  | { status: "error"; message: string }
+  | { status: "success"; result: FullResults };
 
 export type User = {
   name: string;

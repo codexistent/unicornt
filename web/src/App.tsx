@@ -1,9 +1,9 @@
 import { useState } from "react";
 import type { PageState, Pitch, User } from "./types";
-import { HomePage } from "./pages/HomePage";
 import { LeaderboardPage } from "./pages/LeaderboardPage";
 import { NavBar } from "./widgets/NavBar";
 import { user1 } from "./mocks/mockData";
+import HomePage from "./pages/HomePage";
 
 function App() {
   const [page, setPage] = useState<PageState>("home");
@@ -46,7 +46,7 @@ function App() {
         onSignOut={onSignOut}
       />
       {/* TODO: replace with routing isnstead of state switching */}
-      {page === "home" && <HomePage />}
+      {page === "home" && <HomePage isLoggedIn={loggedIn} />}
       {page === "lboard" && <LeaderboardPage />}
     </>
   );
