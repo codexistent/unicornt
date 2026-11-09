@@ -4,7 +4,7 @@ import { JudgeCard } from "../widgets/JudgeCard";
 export function HomePage() {
   return (
     <>
-      <JudgeCard judgeResult={judgeResult1} />
+      <JudgeCard result={judgeResult1} />
     </>
   );
 }

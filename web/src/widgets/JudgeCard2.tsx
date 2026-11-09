@@ -4,7 +4,7 @@ type JudgeCardProps = {
   judgeResult: JudgeResult;
 };
 
-export function JudgeCard({ judgeResult }: JudgeCardProps) {
+export function JudgeCard2({ judgeResult }: JudgeCardProps) {
   return (
     <article className="flex h-full flex-col justify-between gap-4 rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
       <header className="flex items-center gap-3">
