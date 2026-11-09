@@ -1,35 +1,63 @@
-import type { JudgeResult } from "../types";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
-type JudgeCardProps = {
-  judgeResult: JudgeResult;
-};
-
-export function JudgeCard({ judgeResult }: JudgeCardProps) {
+export function JudgeCard() {
   return (
-    <article className="flex h-full flex-col justify-between gap-4 rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-      <header className="flex items-center gap-3">
-        <span className="text-3xl" aria-hidden="true">
-          🥴
-        </span>
-        <div>
-          <p className="text-sm text-gray-500">Judge</p>
-          <h3 className="font-semibold text-gray-900">
-            {judgeResult.judgeName}
-          </h3>
-        </div>
-      </header>
-
-      <blockquote className="text-gray-700 italic">
-        “{judgeResult.feedback}”
-      </blockquote>
-
-      <footer className="flex items-baseline justify-between border-t border-gray-100 pt-3">
-        <span className="text-sm text-gray-500">Judge rating</span>
-        <span className="text-2xl font-bold text-emerald-600">
-          {judgeResult.score}
-          <span className="text-sm text-gray-400">/10</span>
-        </span>
-      </footer>
-    </article>
+    <Card className="w-full max-w-sm">
+      <CardHeader>
+        <CardTitle>Login to your account</CardTitle>
+        <CardDescription>
+          Enter your email below to login to your account
+        </CardDescription>
+        <CardAction>
+          <Button variant="link">Sign Up</Button>
+        </CardAction>
+      </CardHeader>
+      <CardContent>
+        <form>
+          <div className="flex flex-col gap-6">
+            <div className="grid gap-2">
+              <Label htmlFor="email">Email</Label>
+              <Input
+                id="email"
+                type="email"
+                placeholder="m@example.com"
+                required
+              />
+            </div>
+            <div className="grid gap-2">
+              <div className="flex items-center">
+                <Label htmlFor="password">Password</Label>
+                <a
+                  href="#"
+                  className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
+                >
+                  Forgot your password?
+                </a>
+              </div>
+              <Input id="password" type="password" required />
+            </div>
+          </div>
+        </form>
+      </CardContent>
+      <CardFooter className="flex-col gap-2">
+        <Button type="submit" className="w-full">
+          Login
+        </Button>
+        <Button variant="outline" className="w-full">
+          Login with Google
+        </Button>
+      </CardFooter>
+    </Card>
   );
 }

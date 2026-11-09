@@ -60,4 +60,35 @@ Only place that changed is that the shareable results link is now on backlog.
 
 After adding `types.ts`, we moved to a new branch `ui` which will build out the frontend. In order to properly see how the frontend would display, we made a `mockData.ts` file which the frontend will temporarily reference.
 
-Having wired the mock backend, we then moved onto implementing the components (for each page) and widgets (for the smaller things like buttons or the navbar).
+Having wired the mock backend, we then moved onto implementing the components (for each page) and widgets (for the smaller things like buttons or the navbar). By the end of the day, `JudgeCard.tsx` and `NavBar.tsx` was created.
+
+# 11/9/2026 - Upd 1
+
+Our initial stack was `React` + `TailwindCSS` + `FastAPI`. However the UI was getting tiring to implement, so we added in the components library `ShadCN` to make the process more streamlined.
+
+When adding ShadCN, we had to make the following changes:
+
+- In `tsconfig.json`, add to main block:
+  - ```// for shadCN library
+    "compilerOptions": {
+      "paths": {
+        "@/*": ["./src/*"]
+      }
+    }
+    ```
+- In `tsconfig.app.json`, add to `"CompilerOptions"`:
+  - ```// for shadCN library
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+    ```
+- In `vite.config.ts`, add
+  - `import path from "path";` at the top and
+  - ```resolve: {
+      alias: {
+        // for shadCN components lib
+        "@": path.resolve(__dirname, "./src"),
+      },
+    },
+    ```
+    in `defineConfig`.

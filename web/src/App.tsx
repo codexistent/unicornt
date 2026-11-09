@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { PageState, User } from "./types";
+import type { PageState, Pitch, User } from "./types";
 import { HomePage } from "./pages/HomePage";
 import { LeaderboardPage } from "./pages/LeaderboardPage";
 import { NavBar } from "./widgets/NavBar";
@@ -9,6 +9,7 @@ function App() {
   const [page, setPage] = useState<PageState>("home");
   const [loggedIn, setLoggedIn] = useState(false);
   const [user, setUser] = useState<User | null>(null);
+  const [pitch, setPitch] = useState<Pitch | null>();
 
   function onNavigate(_page: PageState) {
     if (page != _page) setPage(_page);
@@ -27,6 +28,12 @@ function App() {
       return;
     }
     (setLoggedIn(false), setUser(null));
+  }
+  function onClickSubmit(_pitch: Pitch) {
+    if (page !== "pitch") {
+      console.log("Error: Cannot submit on non-pitch page");
+      return;
+    }
   }
 
   return (

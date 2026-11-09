@@ -2,7 +2,7 @@
  * @fileoverview Defines types used throughout app
  */
 
-export type PageState = "home" | "lboard";
+export type PageState = "home" | "pitch" | "result" | "lboard";
 
 export type User = {
   name: string;
