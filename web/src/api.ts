@@ -13,6 +13,14 @@ export function judgePitch(_pitch: Pitch): Promise<FullResults> {
   });
 }
 
+var counter = 0;
+
 function giveFullResults(): FullResults {
-  return sampleResults2;
+  counter++;
+  counter %= 3;
+  return counter == 0
+    ? sampleResults1
+    : counter == 1
+      ? sampleResults2
+      : sampleResults3;
 }

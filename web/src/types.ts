@@ -2,6 +2,13 @@
  * @fileoverview Defines types used throughout app
  */
 
+export type PageState = "home" | "lboard";
+
+export type User = {
+  name: string;
+  avatarUrl: string;
+};
+
 // judge result
 export type JudgeResult = {
   judgeName: string;
@@ -10,7 +17,7 @@ export type JudgeResult = {
 };
 
 // verdict - literal union type
-export type Verdict = "unicorn" | "unicornt"; // unicorn if score >= 15
+export type Verdict = "unicorn" | "unicornt"; // unicorn if score >= 24
 
 // roast result
 export type FullResults = {

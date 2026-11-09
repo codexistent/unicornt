@@ -1,7 +1,7 @@
 /**
  * @fileoverview Temporary fake data for ui testing
  */
-import type { FullResults, LeaderboardEntry } from "../types";
+import type { FullResults, LeaderboardEntry, User } from "../types";
 
 export const sampleResults1: FullResults = {
   judgeResults: [
@@ -12,12 +12,12 @@ export const sampleResults1: FullResults = {
       score: 3,
     },
     {
-      judgeName: "Toobie",
+      judgeName: "Toby",
       feedback: "The sector's not looking great, I'm not sure about this.",
       score: 4,
     },
     {
-      judgeName: "Appa",
+      judgeName: "Ono",
       feedback: "I got depressed in the middle of your pitch.",
       score: 3,
     },
@@ -33,21 +33,21 @@ export const sampleResults2: FullResults = {
       judgeName: "Jacobi",
       feedback:
         "Very sketchy pitch. Your company's future is looking dimmer than my son's.",
-      score: 3,
+      score: 5,
     },
     {
-      judgeName: "Toobie",
+      judgeName: "Toby",
       feedback: "The sector's not looking great, I'm not sure about this.",
       score: 10,
     },
     {
       judgeName: "Ono",
       feedback: "Nopie nope nope.",
-      score: 3,
+      score: 10,
     },
   ],
-  totalScore: 16,
-  verdict: "unicornt",
+  totalScore: 25,
+  verdict: "unicorn",
   pitchId: "a1b2c3",
 };
 
@@ -60,12 +60,12 @@ export const sampleResults3: FullResults = {
       score: 3,
     },
     {
-      judgeName: "Toobie",
+      judgeName: "Toby",
       feedback: "The sector's not looking great, I'm not sure about this.",
       score: 4,
     },
     {
-      judgeName: "Onope",
+      judgeName: "Ono",
       feedback: "Onope.",
       score: 3,
     },
@@ -86,7 +86,7 @@ export const leaderboardEntry1: LeaderboardEntry = {
   verdict: "unicorn",
   githubUsername: "strong",
   avatarUrl: "https://github.com/test.png",
-  creationTime: "2026-11-08T19:41:00Z",
+  creationTime: "2026-12-14T19:41:00Z",
 };
 
 export const leaderboardEntry2: LeaderboardEntry = {
@@ -115,4 +115,9 @@ export const leaderboardEntry3: LeaderboardEntry = {
   githubUsername: "maker2",
   avatarUrl: "https://github.com/waffles.png",
   creationTime: "2026-11-08T19:41:00Z",
+};
+
+export const user1: User = {
+  name: "Kanye",
+  avatarUrl: "https://avatars.githubusercontent.com/u/77512088?v=4",
 };

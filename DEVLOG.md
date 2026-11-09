@@ -59,3 +59,5 @@ Only place that changed is that the shareable results link is now on backlog.
 # 11/8/2026 - Upd 3
 
 After adding `types.ts`, we moved to a new branch `ui` which will build out the frontend. In order to properly see how the frontend would display, we made a `mockData.ts` file which the frontend will temporarily reference.
+
+Having wired the mock backend, we then moved onto implementing the components (for each page) and widgets (for the smaller things like buttons or the navbar).
