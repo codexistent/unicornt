@@ -95,6 +95,20 @@ When adding ShadCN, we had to make the following changes:
 
 # 11/9/2026 - Upd 2
 
-Finished the `JudgeCard.tsx` and `LeaderBoardRow.tsx` widgets using shadcn library. Also redid `HomePage.tsx` and `NavBar.tsx` with shadcn. 
+Finished the `JudgeCard.tsx` and `LeaderBoardRow.tsx` widgets using shadcn library. Also redid `HomePage.tsx` and `NavBar.tsx` with shadcn.
 
 Currently wiring `LeaderboardPage.tsx` to api.
+
+# 11/9/2026 - Upd 3
+
+Completed frontend with mock data plugged in.
+
+## Connecting to AI API
+
+Moved to `ai` branch for adding in the AI API for judge results.
+
+Added a virtual environment to isolate dependencies (on Windows btw):
+
+- Went into `/api`, ran `python -m venv .venv` then `.venv\Scripts\activate`
+- To install listed dependencies from `requirements.txt` I ran `pip install -r requirements.txt`
+- Added `.venv/` to `.gitignore`
