@@ -9,7 +9,7 @@ import { supabase } from "./lib/supabase";
 function App() {
   const [page, setPage] = useState<PageState>("home");
   const [session, setSession] = useState<Session | null>(null);
-  const [authLoading, setAuthLoading] = useState(false);
+  const [authLoading, setAuthLoading] = useState(true);
   const user: User | null = session
     ? {
       name: session.user.user_metadata.user_name ?? 
@@ -55,9 +55,9 @@ function App() {
         current={page}
         onNavigate={onNavigate}
         user={user}
+        authLoading={authLoading}
         onSignIn={onSignIn}
         onSignOut={onSignOut}
-        authLoading={authLoading}
       />
       {/* TODO: replace with routing isnstead of state switching */}
       {page === "home" && <HomePage isLoggedIn={loggedIn} />}
