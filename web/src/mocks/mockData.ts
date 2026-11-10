@@ -1,14 +1,9 @@
 /**
  * @fileoverview Temporary fake data for ui testing
  */
-import type {
-  FullResults,
-  JudgeResult,
-  LeaderboardEntry,
-  User,
-} from "../types";
+import type { FullResult, JudgeResult, LeaderboardEntry, User } from "../types";
 
-export const sampleResults1: FullResults = {
+export const sampleResult1: FullResult = {
   judgeResults: [
     {
       judgeName: "Jacobi",
@@ -32,7 +27,7 @@ export const sampleResults1: FullResults = {
   pitchId: "a1b2c3",
 };
 
-export const sampleResults2: FullResults = {
+export const sampleResult2: FullResult = {
   judgeResults: [
     {
       judgeName: "Jacobi",
@@ -56,7 +51,7 @@ export const sampleResults2: FullResults = {
   pitchId: "a1b2c3",
 };
 
-export const sampleResults3: FullResults = {
+export const sampleResult3: FullResult = {
   judgeResults: [
     {
       judgeName: "Jacobi",

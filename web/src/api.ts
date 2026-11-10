@@ -1,26 +1,37 @@
-import type { FullResults, Pitch } from "./types";
+import type { FullResult, LeaderboardEntry, Pitch } from "./types";
 import {
-  sampleResults1,
-  sampleResults2,
-  sampleResults3,
+  leaderboardEntry1,
+  leaderboardEntry2,
+  leaderboardEntry3,
+  sampleResult1,
+  sampleResult2,
+  sampleResult3,
 } from "./mocks/mockData";
 
-export function judgePitch(_pitch: Pitch): Promise<FullResults> {
+export function judgePitch(_pitch: Pitch): Promise<FullResult> {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(getFullResults());
+      resolve(getFullResult());
     }, 500);
   });
 }
 
 var counter = 0;
 
-function getFullResults(): FullResults {
+export function getFullResult(): FullResult {
   counter++;
   counter %= 3;
   return counter == 0
-    ? sampleResults1
+    ? sampleResult1
     : counter == 1
-      ? sampleResults2
-      : sampleResults3;
+      ? sampleResult2
+      : sampleResult3;
+}
+
+export function getLeaderboardEntries(): Promise<LeaderboardEntry[]> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve([leaderboardEntry1, leaderboardEntry2, leaderboardEntry3]);
+    }, 500);
+  });
 }

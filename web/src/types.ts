@@ -7,7 +7,7 @@ export type PitchFormState =
   | { status: "idle" }
   | { status: "loading" }
   | { status: "error"; message: string }
-  | { status: "success"; result: FullResults };
+  | { status: "success"; result: FullResult };
 
 export type User = {
   name: string;
@@ -25,7 +25,7 @@ export type JudgeResult = {
 export type Verdict = "unicorn" | "unicornt"; // unicorn if score >= 24
 
 // roast result
-export type FullResults = {
+export type FullResult = {
   judgeResults: JudgeResult[];
   totalScore: number;
   verdict: Verdict;
