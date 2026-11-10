@@ -107,9 +107,9 @@ Completed frontend with mock data plugged in.
 
 Moved to `ai-api` branch for adding in the AI API for judge results.
 
-Added a virtual environment to isolate dependencies (on Windows btw):
+Added a virtual environment to isolate dependencies:
 
-- Went into `/api`, ran `python -m venv .venv` then `.venv\Scripts\activate`
+- Went into `/api`, ran `python -m venv .venv` then `.venv\Scripts\activate` (on Windows btw; the commands can differ if you're on Mac)
 - To install listed dependencies from `requirements.txt` I ran `pip install -r requirements.txt`
 - Added `.venv/` to `.gitignore`
 
@@ -123,7 +123,7 @@ Tested AI API wiring by running the server through calling `uvicorn main:app --r
 
 FastAPI then opens `http://localhost:8000/docs` for which we can test sending requests. Sending in this request:
 
-```
+```json
 {
   "companyName": "GreenerGrass",
   "text": "We help people paint their lawns green."
@@ -132,7 +132,7 @@ FastAPI then opens `http://localhost:8000/docs` for which we can test sending re
 
 we successfully got:
 
-```
+```json
 {
   "judgeResults": [
     {
@@ -165,3 +165,7 @@ Switched to a new branch `api` and connected the frontend with the backend. We g
 ![first pitch p2](docs/media/firstpitch2.png)
 
 The requests are sent seperately for each of the judges and it is quite slow waiting for all three calls though, so I might add in functionality which shows users now many judges are complete or some sort of status bar for greater perceived speed.
+
+## Sidequest - Editing Project on Mac
+
+Couldn't access my Windows computer for a while and had to code on mac. Ran into an issue where when installing the dependencies for my venv it kept failing with error ```ERROR: Failed building wheel for cryptography```. Resolved by using the edited command ```pip install -r requirements.txt --only-binary cryptography```.
