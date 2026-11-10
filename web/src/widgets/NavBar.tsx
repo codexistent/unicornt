@@ -57,7 +57,7 @@ export function NavBar({
         </button>
 
         <div className="hidden items-center gap-1 sm:flex">
-          {NAV_ITEMS.map(({ page, label }) => (
+          {VISIBLE_NAV_ITEMS.map(({ page, label }) => (
             <Button
               key={page}
               variant={current === page ? "secondary" : "ghost"}
