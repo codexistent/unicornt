@@ -1,3 +1,4 @@
+# database tables/describes whats stored in db
 from datetime import datetime
 from typing import literal 
 

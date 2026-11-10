@@ -105,7 +105,7 @@ Completed frontend with mock data plugged in.
 
 ## Connecting to AI API
 
-Moved to `ai` branch for adding in the AI API for judge results.
+Moved to `ai-api` branch for adding in the AI API for judge results.
 
 Added a virtual environment to isolate dependencies (on Windows btw):
 
