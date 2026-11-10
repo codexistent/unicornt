@@ -33,6 +33,7 @@ type NavBarProps = {
   user: User | null; // null = signed out
   onSignIn: () => void;
   onSignOut: () => void;
+  authLoading: boolean;
 };
 
 export function NavBar({
@@ -41,6 +42,7 @@ export function NavBar({
   user,
   onSignIn,
   onSignOut,
+  authLoading
 }: NavBarProps) {
   return (
     <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur">
@@ -99,6 +101,8 @@ export function NavBar({
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
+          ) : authLoading ? (
+            <Button disabled>Loading...</Button>
           ) : (
             <Button onClick={onSignIn}>Sign in</Button>
           )}
