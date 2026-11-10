@@ -10,7 +10,6 @@ import {
 
 const API_URL: string = import.meta.env.VITE_API_URL;
 
-console.log("env:", import.meta.env);
 if (!API_URL) {
   throw new Error(
     "VITE_API_URL not set. Add to web/.env.local and restart server",

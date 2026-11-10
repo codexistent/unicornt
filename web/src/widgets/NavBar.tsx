@@ -22,8 +22,6 @@ const VISIBLE_NAV_ITEMS = NAV_ITEMS.filter(
   ({ page }) => page !== "lboard" || SHOW_LBOARD,
 );
 
-console.log(VISIBLE_NAV_ITEMS);
-
 type User = {
   name: string;
   avatarUrl: string;
