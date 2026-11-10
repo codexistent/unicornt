@@ -92,3 +92,9 @@ When adding ShadCN, we had to make the following changes:
     },
     ```
     in `defineConfig`.
+
+# 11/9/2026 - Upd 2
+
+Finished the `JudgeCard.tsx` and `LeaderBoardRow.tsx` widgets using shadcn library. Also redid `HomePage.tsx` and `NavBar.tsx` with shadcn. 
+
+Currently wiring `LeaderboardPage.tsx` to api.

@@ -8,14 +8,14 @@ import {
 export function judgePitch(_pitch: Pitch): Promise<FullResults> {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(giveFullResults());
+      resolve(getFullResults());
     }, 500);
   });
 }
 
 var counter = 0;
 
-function giveFullResults(): FullResults {
+function getFullResults(): FullResults {
   counter++;
   counter %= 3;
   return counter == 0

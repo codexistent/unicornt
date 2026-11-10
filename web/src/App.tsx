@@ -47,7 +47,7 @@ function App() {
       />
       {/* TODO: replace with routing isnstead of state switching */}
       {page === "home" && <HomePage isLoggedIn={loggedIn} />}
-      {page === "lboard" && <LeaderboardPage />}
+      { page === "lboard" && <LeaderboardPage /> }
     </>
   );
 }
