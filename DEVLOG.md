@@ -112,3 +112,13 @@ Added a virtual environment to isolate dependencies (on Windows btw):
 - Went into `/api`, ran `python -m venv .venv` then `.venv\Scripts\activate`
 - To install listed dependencies from `requirements.txt` I ran `pip install -r requirements.txt`
 - Added `.venv/` to `.gitignore`
+
+# 11/10/2026 - Upd 1
+
+## Connecting to AI API (Cont.d)
+
+### Testing the API
+
+Tested AI API wiring by running the server through calling `uvicorn main:app --reload` in `/api` directory. The server started up successfully.
+
+FastAPI then opens `http://localhost:8000/docs` for which we can test sending requests.

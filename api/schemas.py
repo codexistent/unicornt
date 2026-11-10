@@ -7,7 +7,7 @@ from pydantic.alias_generators import to_camel
 class CamelModel(BaseModel):
     model_config = ConfigDict(alias_generator=to_camel, populate_by_name=True)
 
-Verdict = Literal["unicorn" | "unicornt"]
+Verdict = Literal["unicorn", "unicornt"]
 
 class Pitch(CamelModel):
     company_name: str = Field(min_length = 1, max_length = 50)
@@ -20,9 +20,9 @@ class JudgeResult(CamelModel):
 
 class FullResult(CamelModel):
     judge_results: list[JudgeResult]
-    total_score: int 
+    total_score: int
     verdict: Verdict 
-    pitch_id: str | None = none 
+    pitch_id: str | None = None 
 
 class JudgeOutput(BaseModel):
     feedback: str 
