@@ -160,4 +160,8 @@ proving our AI server connection is working.
 
 ## Linking the Front and Backend
 
-Switched to a new branch `api` whose purpose is to connect the frontend with the backend.
+Switched to a new branch `api` and connected the frontend with the backend. We got our first working pitch result sent over by the AI server:
+![first pitch p1](docs/media/firstpitch1.png)
+![first pitch p2](docs/media/firstpitch2.png)
+
+The requests are sent seperately for each of the judges and it is quite slow waiting for all three calls though, so I might add in functionality which shows users now many judges are complete or some sort of status bar for greater perceived speed.

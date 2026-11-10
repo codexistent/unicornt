@@ -11,11 +11,18 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import type { PageState } from "@/types";
+import { SHOW_LBOARD } from "@/globals";
 
 const NAV_ITEMS: { page: PageState; label: string }[] = [
   { page: "home", label: "Home" },
   { page: "lboard", label: "Leaderboard" },
 ];
+
+const VISIBLE_NAV_ITEMS = NAV_ITEMS.filter(
+  ({ page }) => page !== "lboard" || SHOW_LBOARD,
+);
+
+console.log(VISIBLE_NAV_ITEMS);
 
 type User = {
   name: string;
@@ -112,7 +119,7 @@ export function NavBar({
               <MenuIcon />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              {NAV_ITEMS.map(({ page, label }) => (
+              {VISIBLE_NAV_ITEMS.map(({ page, label }) => (
                 <DropdownMenuItem key={page} onClick={() => onNavigate(page)}>
                   {label}
                 </DropdownMenuItem>
