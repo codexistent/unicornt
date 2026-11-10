@@ -6,3 +6,5 @@ export const dateFormatter = new Intl.DateTimeFormat(undefined, {
   day: "numeric",
   year: "numeric",
 });
+
+export const SHOW_LBOARD = false;

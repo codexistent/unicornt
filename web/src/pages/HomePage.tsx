@@ -21,7 +21,7 @@ export default function HomePage({ isLoggedIn }: HomePageProps) {
 
   async function handleSubmit(e: SubmitEvent<HTMLFormElement>) {
     e.preventDefault(); // prevent full page reload
-    if (canSubmit) return;
+    if (!canSubmit) return;
 
     setState({ status: "loading" });
     try {
@@ -86,6 +86,16 @@ export default function HomePage({ isLoggedIn }: HomePageProps) {
             {isLoading ? "The judges are deliberating... " : "Pitch it"}
           </Button>
         </form>
+
+        {/* show errors */}
+        {state.status === "error" && (
+          <p
+            role="alert"
+            className="rounded-md border border-destructive/50 bg-destructive/10 px-4 py-3 text-sm text-destructive"
+          >
+            {state.message}
+          </p>
+        )}
       </section>
 
       {state.status === "success" && (
