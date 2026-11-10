@@ -9,7 +9,7 @@ function App() {
   const [page, setPage] = useState<PageState>("home");
   const [loggedIn, setLoggedIn] = useState(false);
   const [user, setUser] = useState<User | null>(null);
-  const [pitch, setPitch] = useState<Pitch | null>();
+  // const [pitch, setPitch] = useState<Pitch | null>();
 
   function onNavigate(_page: PageState) {
     if (page != _page) setPage(_page);
@@ -29,12 +29,12 @@ function App() {
     }
     (setLoggedIn(false), setUser(null));
   }
-  function onClickSubmit(_pitch: Pitch) {
-    if (page !== "pitch") {
-      console.log("Error: Cannot submit on non-pitch page");
-      return;
-    }
-  }
+  // function onClickSubmit(_pitch: Pitch) {
+  //   if (page !== "pitch") {
+  //     console.log("Error: Cannot submit on non-pitch page");
+  //     return;
+  //   }
+  // }
 
   return (
     <>
@@ -47,7 +47,7 @@ function App() {
       />
       {/* TODO: replace with routing isnstead of state switching */}
       {page === "home" && <HomePage isLoggedIn={loggedIn} />}
-      { page === "lboard" && <LeaderboardPage /> }
+      {page === "lboard" && <LeaderboardPage />}
     </>
   );
 }
