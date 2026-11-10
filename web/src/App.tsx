@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { PageState, Pitch, User } from "./types";
+import type { PageState, /*Pitch,*/ User } from "./types";
 import { LeaderboardPage } from "./pages/LeaderboardPage";
 import { NavBar } from "./widgets/NavBar";
 import { user1 } from "./mocks/mockData";
