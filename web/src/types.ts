@@ -2,18 +2,30 @@
  * @fileoverview Defines types used throughout app
  */
 
+export type PageState = "home" | "pitch" | "result" | "lboard";
+export type PitchFormState =
+  | { status: "idle" }
+  | { status: "loading" }
+  | { status: "error"; message: string }
+  | { status: "success"; result: FullResult };
+
+export type User = {
+  name: string;
+  avatarUrl: string;
+};
+
 // judge result
 export type JudgeResult = {
-  judgeName: string; // judge name
+  judgeName: string;
   feedback: string;
   score: number;
 };
 
 // verdict - literal union type
-export type Verdict = "unicorn" | "unicorndt";
+export type Verdict = "unicorn" | "unicornt"; // unicorn if score >= 24
 
 // roast result
-export type FullResults = {
+export type FullResult = {
   judgeResults: JudgeResult[];
   totalScore: number;
   verdict: Verdict;
@@ -35,5 +47,5 @@ export type LeaderboardEntry = {
   verdict: Verdict;
   githubUsername: string;
   avatarUrl: string;
-  creationTime: string; // JSON has no date type
+  creationTime: string; // JSON has no date type; use ISO 8601
 };
