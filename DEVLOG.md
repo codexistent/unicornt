@@ -121,4 +121,43 @@ Added a virtual environment to isolate dependencies (on Windows btw):
 
 Tested AI API wiring by running the server through calling `uvicorn main:app --reload` in `/api` directory. The server started up successfully.
 
-FastAPI then opens `http://localhost:8000/docs` for which we can test sending requests.
+FastAPI then opens `http://localhost:8000/docs` for which we can test sending requests. Sending in this request:
+
+```
+{
+  "companyName": "GreenerGrass",
+  "text": "We help people paint their lawns green."
+}
+```
+
+we successfully got:
+
+```
+{
+  "judgeResults": [
+    {
+      "judgeName": "Nohype Bro",
+      "feedback": "So you've disrupted paint by targeting homeowners who refuse to accept basic biology? Good luck scaling a business model that burns cash faster than a drought burns your customers' dead turf.",
+      "score": 2
+    },
+    {
+      "judgeName": "The Skeptic",
+      "feedback": "You've managed to invent a solution that is somehow worse for the environment than actual artificial turf, all to solve a cosmetic problem nobody with a brain cares about. Your total addressable market is literally delusional homeowners and HOAs with too much money and zero taste.",
+      "score": 1
+    },
+    {
+      "judgeName": "Boomer",
+      "feedback": "So you want me to buy spray paint for my dirt instead of just turning on the sprinkler? My neighbor Bob tried painting his deck once and it looked like a swamp, nobody is paying you for a lawn full of toxic green goop.",
+      "score": 2
+    }
+  ],
+  "totalScore": 5,
+  "verdict": "unicornt"
+}
+```
+
+proving our AI server connection is working.
+
+## Linking the Front and Backend
+
+Switched to a new branch `api` whose purpose is to connect the frontend with the backend.

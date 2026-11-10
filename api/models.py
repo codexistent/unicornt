@@ -1,6 +1,6 @@
 # database tables/describes whats stored in db
 from datetime import datetime
-from typing import literal 
+from typing import Literal 
 
 from pydantic import BaseModel, ConfigDict, Field, computed_field 
 from pydantic.alias_generators import to_camel
@@ -10,7 +10,7 @@ UNICORN_THRESHOLD = 24
 Verdict = Literal["unicorn", "unicornt"]
 
 class CamelModel(BaseModel):
-    model_config = ConfigDict(alias_generator=to_camel, populate_by_name=true)
+    model_config = ConfigDict(alias_generator=to_camel, populate_by_name=True)
 
 class Pitch(CamelModel):
     company_name: str = Field(min_length = 1, max_length = 50)
