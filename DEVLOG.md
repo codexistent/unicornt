@@ -189,3 +189,5 @@ In a future version, we will add:
 # 11/10/2026 - Upd 3
 
 Added supabase to app for user auth.
+
+A small thing I've noticed: backend/web service deployment tends to take more time than the frontend deployment. I guess that's a given though since the backend has more dependencies.
