@@ -126,7 +126,7 @@ export default function HomePage({ isLoggedIn }: HomePageProps) {
             )
           ) : (
             <p className="text-center text-sm text-muted-foreground">
-              Sigining in increases your chances of better results.
+              Sign in so we can steal your email.
             </p>
           )}
         </section>
