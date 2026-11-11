@@ -178,11 +178,14 @@ Version 1 complete! Its primary fulfillment was in enabling users to send in a p
 
 ## Version 2.0
 
-For version 2, we add:
+For version 2, we will add:
 - User auth 
+
+# Version 3.0 (Future)
+In a future version, we will add:
 - Leaderboard
-- (possibly) shareable links for results
+- shareable links for results
 
 # 11/10/2026 - Upd 3
 
-Adding supabase to app for user auth.
+Added supabase to app for user auth.
