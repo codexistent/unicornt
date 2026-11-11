@@ -182,3 +182,7 @@ For version 2, we add:
 - User auth 
 - Leaderboard
 - (possibly) shareable links for results
+
+# 11/10/2026 - Upd 3
+
+Adding supabase to app for user auth.
