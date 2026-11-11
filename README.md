@@ -37,8 +37,6 @@ For full build documentation, see [DEVLOG.md](https://github.com/codexistent/uni
 2. Backend fires all three judges at AI server in one call, each with its own persona prompt
 3. Each judge returns structured JSON, which the backend validates, clamps 1-10, totals, and returns in a verdict to frontend
 
-Sepearately, we use Supabase for authentication. This goes Client -> Supabase -> GitHub (since we're authenticating with GitHub) -> Server/FastAPI -> Client.  
-
 ### Design Considerations
 
 - A single call to Gemini for all three judges. Thinking is turned off and token output is capped
@@ -65,4 +63,4 @@ Sepearately, we use Supabase for authentication. This goes Client -> Supabase ->
 
 ## About + Contact
 
-Built by @codexistent just for fun. Please send any feedback to codexistent@gmail.com.
+Built by @codexistent just for fun. Please send feedback to codexistent@gmail.com.
