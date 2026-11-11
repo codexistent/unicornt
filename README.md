@@ -1,8 +1,10 @@
 # 🦄 Unicornt
 
-Get your startup idea judged, ranked and critiqued by a panel of virtual VCs who have 0% optimism.
+Get your startup idea critiqued by a panel of virtual VCs who have 0% optimism.
 
 **Live Demo:** https://unicornt.vercel.app 
+
+**Current Version**: 2.0 (see [DEVLOG.md](https://github.com/codexistent/unicornt/blob/main/DEVLOG.md) for info on releases)
 
 1. Type a company name and a one tweet-length pitch. 
 ![pitch startup](docs/media/pitch.png)

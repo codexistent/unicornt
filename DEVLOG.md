@@ -169,3 +169,23 @@ The requests are sent seperately for each of the judges and it is quite slow wai
 ## Sidequest - Editing Project on Mac
 
 Couldn't access my Windows computer for a while and had to code on mac. Ran into an issue where when installing the dependencies for my venv it kept failing with error ```ERROR: Failed building wheel for cryptography```. Resolved by using the edited command ```pip install -r requirements.txt --only-binary cryptography```.
+
+# 11/10/2026 - Upd 2
+
+## Version 1.0
+
+Version 1 complete! Its primary fulfillment was in enabling users to send in a pitch and get it judged.
+
+## Version 2.0
+
+For version 2, we will add:
+- User auth 
+
+# Version 3.0 (Future)
+In a future version, we will add:
+- Leaderboard
+- shareable links for results
+
+# 11/10/2026 - Upd 3
+
+Added supabase to app for user auth.

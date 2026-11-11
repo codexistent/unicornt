@@ -1,15 +1,18 @@
 # web layer/the acc api 
-import logging, os, time 
+import logging, os, time
+from typing import Annotated 
 
 from dotenv import load_dotenv 
 
 load_dotenv() # must run b4 importing modules that read env vars at import time (judges.py)
 
-from fastapi import FastAPI, HTTPException
+from fastapi import Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
 from judges import judge_pitch 
 from schemas import FullResult, Pitch 
+
+from auth import CurrentUser, get_current_user
 
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger("unicornt")
@@ -37,3 +40,7 @@ async def judge(pitch: Pitch) -> FullResult:
         raise HTTPException(status_code=502, detail="The judges were out to lunch. Try again.")
     log.info("Judged in %.2fs", time.perf_counter() - start)
     return result
+
+@app.get("/api/me", response_model=CurrentUser)
+def me(user: Annotated[CurrentUser, Depends(get_current_user)]) -> CurrentUser:
+    return user

@@ -10,6 +10,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Skeleton } from "@/components/ui/skeleton";
+
 import type { PageState } from "@/types";
 import { SHOW_LBOARD } from "@/globals";
 
@@ -31,16 +33,20 @@ type NavBarProps = {
   current: PageState;
   onNavigate: (_page: PageState) => void;
   user: User | null; // null = signed out
+  authLoading: boolean;
   onSignIn: () => void;
   onSignOut: () => void;
 };
+
+type AuthAreaProps = Pick<NavBarProps, "user" | "authLoading" | "onSignIn" | "onSignOut">;
 
 export function NavBar({
   current,
   onNavigate,
   user,
+  authLoading,
   onSignIn,
-  onSignOut,
+  onSignOut
 }: NavBarProps) {
   return (
     <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur">
@@ -68,40 +74,7 @@ export function NavBar({
         </div>
 
         <div className="ml-auto flex items-center gap-2">
-          {user ? (
-            <DropdownMenu>
-              <DropdownMenuTrigger
-                render={
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="rounded-full"
-                    aria-label="Account menu"
-                  />
-                }
-              >
-                <Avatar>
-                  <AvatarImage src={user.avatarUrl} alt="" />
-                  <AvatarFallback>
-                    {user.name.charAt(0).toUpperCase()}
-                  </AvatarFallback>
-                </Avatar>
-              </DropdownMenuTrigger>
-
-              <DropdownMenuContent align="end">
-                <DropdownMenuGroup>
-                  <DropdownMenuLabel>{user.name}</DropdownMenuLabel>
-                </DropdownMenuGroup>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={onSignOut}>
-                  <LogOutIcon />
-                  Sign out
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          ) : (
-            <Button onClick={onSignIn}>Sign in</Button>
-          )}
+          <AuthArea user={user} authLoading={authLoading} onSignIn={onSignIn} onSignOut={onSignOut}/>
 
           <DropdownMenu>
             <DropdownMenuTrigger
@@ -127,5 +100,47 @@ export function NavBar({
         </div>
       </nav>
     </header>
+  );
+}
+
+function AuthArea({user, authLoading, onSignIn, onSignOut} : AuthAreaProps){
+  if(authLoading){
+    return <Skeleton className="size-8 rounded-full" />;
+  }
+  if(!user){
+    return <Button onClick={onSignIn}>Sign in with GitHub</Button>;
+  }
+
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger
+        render={
+          <Button
+            variant="ghost"
+            size="icon"
+            className="rounded-full"
+            aria-label="Account menu"
+          />
+        }
+      >
+        <Avatar>
+          <AvatarImage src={user.avatarUrl} alt="" />
+          <AvatarFallback>
+            {user.name.charAt(0).toUpperCase()}
+          </AvatarFallback>
+        </Avatar>
+      </DropdownMenuTrigger>
+
+      <DropdownMenuContent align="end">
+        <DropdownMenuGroup>
+          <DropdownMenuLabel>{user.name}</DropdownMenuLabel>
+        </DropdownMenuGroup>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem onClick={onSignOut}>
+          <LogOutIcon />
+          Sign out
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }
